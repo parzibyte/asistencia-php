@@ -1,4 +1,33 @@
 <?php
+
+function saveAttendanceData($date, $employees)
+{
+    deleteAttendanceDataByDate($date);
+    $db = getDatabase();
+    $db->beginTransaction();
+    $statement = $db->prepare("INSERT INTO employee_attendance(employee_id, date, status) VALUES (?, ?, ?)");
+    foreach ($employees as $employee) {
+        $statement->execute([$employee->id, $date, $employee->status]);
+    }
+    $db->commit();
+    return true;
+}
+
+function deleteAttendanceDataByDate($date)
+{
+    $db = getDatabase();
+    $statement = $db->prepare("DELETE FROM employee_attendance WHERE date = ?");
+    return $statement->execute([$date]);
+}
+function getAttendanceDataByDate($date)
+{
+    $db = getDatabase();
+    $statement = $db->prepare("SELECT employee_id, status FROM employee_attendance WHERE date = ?");
+    $statement->execute([$date]);
+    return $statement->fetchAll();
+}
+
+
 function deleteEmployee($id)
 {
     $db = getDatabase();

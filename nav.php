@@ -13,7 +13,7 @@
                 <a class="nav-link" href="employees.php">Employees <i class="fa fa-users"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="attendance.php">Register attendance <i class="fa fa-check-double"></i></a>
+                <a class="nav-link" href="attendance_register.php">Register attendance <i class="fa fa-check-double"></i></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="reports.php">Reports <i class="fa fa-file-alt"></i></a>
