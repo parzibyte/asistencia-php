@@ -43,7 +43,9 @@ include_once "nav.php";
     </div>
 </div>
 <script src="js/vue.min.js"></script>
+<script src="js/vue-toasted.min.js"></script>
 <script>
+    Vue.use(Toasted);
     const UNSET_STATUS = "unset";
     new Vue({
         el: "#app",
@@ -80,7 +82,10 @@ include_once "nav.php";
                     method: "POST",
                     body: JSON.stringify(payload),
                 });
-                //TODO: toast
+                this.$toasted.show("Saved", {
+                    position: "top-left",
+                    duration: 1000,
+                });
             },
             async refreshEmployeesList() {
                 // Get all employees
