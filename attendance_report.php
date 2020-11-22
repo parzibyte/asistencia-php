@@ -22,7 +22,7 @@ $employees = getEmployeesWithAttendanceCount($start, $end);
             <label for="start">Start:&nbsp;</label>
             <input required id="start" type="date" name="start" value="<?php echo $start ?>" class="form-control mr-2">
             <label for="end">End:&nbsp;</label>
-            <input required id="end" type="date" name="send" value="<?php echo $end ?>" class="form-control">
+            <input required id="end" type="date" name="end" value="<?php echo $end ?>" class="form-control">
             <button class="btn btn-success ml-2">Filter</button>
         </form>
     </div>
